@@ -13,7 +13,16 @@
         
         function getComputerChoice(){
             let a = Math.random();
-            return (Math.floor(a*3))
+            a = (Math.floor(a*3))
+            if(a == 0){
+                return "paper";
+            }
+            else if(a == 1){
+                return "rock";
+            }
+            else{
+                return "scissor";
+            }
         }
 
         function getHumanChoice(){
@@ -27,7 +36,34 @@
             }
         }
 
-        
+        let humanScore = 0;
+        let computerScore = 0;
+
+        function playRound(humanChoice, computerChoice){
+            if (humanChoice === computerChoice) {
+                console.log('It\'s a tie!');
+            } else if (humanChoice === 'rock' && computerChoice === 'scissors') {
+                humanScore++;
+                console.log('Human wins!');
+            } else if (humanChoice === 'scissors' && computerChoice === 'paper') {
+                humanScore++;
+                console.log('Human wins!');
+            } else if (humanChoice === 'paper' && computerChoice === 'rock') {
+                humanScore++;
+                console.log('Human wins!');
+            } else if (computerChoice === 'rock' && humanChoice === 'scissors') {
+                computerScore++;
+                console.log('Computer wins!');
+            } else if (computerChoice === 'scissors' && humanChoice === 'paper') {
+                computerScore++;
+                console.log('Computer wins!');
+            } else if (computerChoice === 'paper' && humanChoice === 'rock') {
+                computerScore++;
+                console.log('Computer wins!');
+            } else {
+                console.log('Invalid input. Please choose rock, paper, or scissors.');
+            }
+        }
 
     </script>
 
