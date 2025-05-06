@@ -12,11 +12,22 @@
         console.log("Hello World!")
         
         function getComputerChoice(){
-            a = Math.random();
+            let a = Math.random();
             return (Math.floor(a*3))
         }
 
-        console.log(getComputerChoice())
+        function getHumanChoice(){
+            let choice = prompt("Rock, Paper or Scissor? ");
+            choice = choice.toLowerCase();
+            if(choice == "rock" || choice == "paper" || choice == "scissor"){
+                return choice;
+            }
+            else{
+                return getHumanChoice();
+            }
+        }
+
+        
 
     </script>
 
