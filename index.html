@@ -6,10 +6,16 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <button class = "rock">Rock</button>
+    <button class = "paper">Paper</button>
+    <button class = "scissor">Scissor</buttom>
     <script>
 
         console.log("Hello World!")
+
+        const rockButton = document.querySelector('.rock');
+        const paperButton = document.querySelector('.paper');
+        const scissorButton = document.querySelector('.scissor');
         
         function getComputerChoice(){
             let a = Math.random();
@@ -25,16 +31,16 @@
             }
         }
 
-        function getHumanChoice(){
-            let choice = prompt("Rock, Paper or Scissor? ");
-            choice = choice.toLowerCase();
-            if(choice == "rock" || choice == "paper" || choice == "scissor"){
-                return choice;
-            }
-            else{
-                return getHumanChoice();
-            }
-        }
+  
+            rockButton.addEventListener("click", () => {
+                playGame("rock");
+            });
+            paperButton.addEventListener("click", () => {
+                playGame("paper");
+            });
+            scissorButton.addEventListener("click", () => {
+                playGame("scissor");
+            });
 
         let humanScore = 0;
         let computerScore = 0;
@@ -68,14 +74,13 @@
         }
 
 
-        function playGame(){
-            while(humanScore<4 && computerScore<4){
-                let humanChoice = getHumanChoice();
+        function playGame(humanChoice){
+
                 let computerChoice = getComputerChoice();
                 playRound(humanChoice,computerChoice);
-            }
+
         }
-        playGame();
+
     </script>
 
 </body>
